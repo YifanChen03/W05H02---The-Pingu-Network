@@ -7,10 +7,10 @@ public class Group {
     private String description;
     private User[] members;
 
-    public Group(User owner, String name, String description) {
-        this.owner = owner;
+    public Group(String name, String description, User owner) {
         this.name = name;
         this.description = description;
+        this.owner = owner;
         members = new User[1];
         members[0] = owner;
     }

@@ -9,7 +9,7 @@ public class Picture {
     private int height;
 
     private int[][] data;
-
+    //github tests noch nicht ausgeführt
     private Picture[] thumbnails;
 
     public Picture(String location, int[][] data) {

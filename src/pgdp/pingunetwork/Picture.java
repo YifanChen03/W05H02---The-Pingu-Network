@@ -19,7 +19,7 @@ public class Picture {
         this.width = data[0].length;
         this.height = data.length;
 
-        thumbnails = new Picture[0];
+        //thumbnails = new Picture[0];
     }
 
     public String getLocation() {

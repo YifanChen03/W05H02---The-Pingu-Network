@@ -16,10 +16,10 @@ public class Picture {
         this.location = location;
         this.data = data;
 
-        width = data[0].length;
-        height = data.length;
+        this.width = data[0].length;
+        this.height = data.length;
 
-        thumbnails = new Picture[0];
+
     }
 
     public String getLocation() {

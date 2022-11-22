@@ -5,14 +5,14 @@ public class Group {
     private User owner;
     private String name;
     private String description;
+    private Picture picture; //picture nicht pictures singular
     private User[] members;
 
-    private Picture picture; //picture nicht pictures singular
-
-    public Group(String name, String description, User owner) {
+    public Group(String name, String description, User owner, Picture picture) {
         this.name = name;
         this.description = description;
         this.owner = owner;
+        this.picture = picture;
         members = new User[1];
         members[0] = owner;
     }

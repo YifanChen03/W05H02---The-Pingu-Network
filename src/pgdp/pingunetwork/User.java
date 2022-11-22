@@ -4,16 +4,16 @@ package pgdp.pingunetwork;
 public class User {
     private String name;
     private String description;
+    private Picture profilePicture;
 
     private Group[] groups;
     private Post[] posts;
     private User[] friends;
 
-    private Picture profilePicture;
-
-    public User(String name, String description) {
+    public User(String name, String description, Picture profilePicture) {
         this.name = name;
         this.description = description;
+        this.profilePicture = profilePicture;
 
         groups = new Group[0];
         posts = new Post[0];
@@ -113,7 +113,7 @@ public class User {
      * @param interactionType Ein beliebiger Integer.
      */
     public void interact(Post post, int interactionType) {
-        Interaction interaction = new Interaction(new User(name, description), interactionType);
+        Interaction interaction = new Interaction(new User(name, description, profilePicture), interactionType);
         post.addInteraction(interaction);
     }
 

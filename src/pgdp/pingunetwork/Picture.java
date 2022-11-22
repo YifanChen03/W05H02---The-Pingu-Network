@@ -38,7 +38,7 @@ public class Picture {
         return data;
     }
 
-    public void setThumbnail(Picture[] thumbnails) {
+    public void setThumbnails(Picture[] thumbnails) {
         this.thumbnails = thumbnails;
     }
 }

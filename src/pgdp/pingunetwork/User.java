@@ -140,6 +140,17 @@ public class User {
      */
     public void comment(Post post, String title, String content) {
         Post comment = new Post(title, content);
+
+        //comment zu Posts von user hinzufügen
+        Post[] nPosts = new Post[posts.length + 1];
+
+        for (int  i = 0; i < posts.length; i++) {
+            nPosts[i] = posts[i];
+        }
+        nPosts[nPosts.length - 1] = comment;
+        posts = nPosts;
+
+        //comment in Post adden
         post.addComment(comment);
     }
 

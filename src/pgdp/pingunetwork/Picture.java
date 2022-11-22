@@ -9,15 +9,15 @@ public class Picture {
     private int height;
 
     private int[][] data;
-    //github tests noch nicht ausgeführt
+    //github tests noch nicht ausgeführt - github tests erfolgreich
     private Picture[] thumbnails;
 
     public Picture(String location, int[][] data) {
         this.location = location;
         this.data = data;
 
-        this.width = data[0].length;
-        this.height = data.length;
+        width = data[0].length;
+        height = data.length;
 
         thumbnails = new Picture[0];
     }

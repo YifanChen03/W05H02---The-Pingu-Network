@@ -111,7 +111,8 @@ public class User {
      * @param interactionType Ein beliebiger Integer.
      */
     public void interact(Post post, int interactionType) {
-        // TODO: Implementiere diese Methode
+        Interaction interaction = new Interaction(new User(name, description), interactionType);
+        post.addInteraction(interaction);
     }
 
     /** Fügt einen neuen Post mit dem übergebenen Titel und Inhalt den 'posts' dieses Nutzers hinzu.
@@ -119,7 +120,15 @@ public class User {
      * @param content Ein beliebiger String
      */
     public void post(String title, String content) {
-        // TODO: Implementiere diese Methode
+        Post post = new Post(title, content);
+
+        Post[] nPosts = new Post[posts.length + 1];
+
+        for (int  i = 0; i < posts.length; i++) {
+            nPosts[i] = posts[i];
+        }
+        nPosts[nPosts.length - 1] = post;
+        posts = nPosts;
     }
 
     /** Fügt einen neuen Kommentar mit dem übergebenen Titel und Inhalt dem übergebenen Post hinzu.
@@ -128,7 +137,8 @@ public class User {
      * @param content Ein beliebiger String
      */
     public void comment(Post post, String title, String content) {
-        // TODO: Implementiere diese Methode
+        Post comment = new Post(title, content);
+        post.addComment(comment);
     }
 
     /* ================ Getter und Setter ================ */

@@ -39,7 +39,34 @@ public class Group {
      * @param user Ein beliebiges User-Objekt.
      */
     public void removeUser(User user) {
-        // TODO: Implementiere diese Methode entsprechend der Aufgabenstellung
+        User[] nMembers = new User[members.length - 1];
+        boolean found = false;
+        boolean isOwner = false;
+
+        for (int  i = 0; i < members.length; i++) {
+            if (members[i] != user) {
+                int index;
+                if(found) {
+                    index = i - 1;
+                } else {
+                    index = i;
+                }
+                nMembers[index] = members[i];
+            } else {
+                found = true;
+                //falls owner entfernt wird
+                if (members[i] == owner) {
+                    isOwner = true;
+                }
+            }
+        }
+        if (found) {
+            //erster aus members[] wird owner
+            if (isOwner) {
+                owner = nMembers[0];
+            }
+            members = nMembers;
+        }
     }
 
     /* ================ Getter und Setter ================ */

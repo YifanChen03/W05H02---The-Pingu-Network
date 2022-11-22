@@ -12,7 +12,7 @@ public class Picture {
     //github tests noch nicht ausgeführt
     private Picture[] thumbnails;
 
-    public Picture(String location, int width, int height, int[][] data) {
+    public Picture(String location, int[][] data) {
         this.location = location;
         this.data = data;
 
@@ -24,6 +24,10 @@ public class Picture {
 
     public String getLocation() {
         return location;
+    }
+
+    public Picture[] getThumbnails() {
+        return thumbnails;
     }
 
     public int getWidth() {

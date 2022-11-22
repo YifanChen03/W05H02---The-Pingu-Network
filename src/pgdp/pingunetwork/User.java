@@ -165,6 +165,9 @@ public class User {
         return profilePicture;
     }
 
+    public void setProfilePicture(Picture profilePicture) {
+        this.profilePicture = profilePicture;
+    }
     public void setName(String name) {
         this.name = name;
     }

@@ -90,6 +90,9 @@ public class Group {
         return picture;
     }
 
+    public void setPicture(Picture picture) {
+        this.picture = picture;
+    }
     public void setOwner(User owner) {
         for (int i = 0; i < members.length; i++) {
             if (members[i] == owner) {

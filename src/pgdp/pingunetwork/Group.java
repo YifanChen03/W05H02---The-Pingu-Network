@@ -7,6 +7,8 @@ public class Group {
     private String description;
     private User[] members;
 
+    private Picture picture; //picture nicht pictures singular
+
     public Group(String name, String description, User owner) {
         this.name = name;
         this.description = description;
@@ -82,6 +84,10 @@ public class Group {
     }
     public User[] getMembers() {
         return members;
+    }
+
+    public Picture getPicture() {
+        return picture;
     }
 
     public void setOwner(User owner) {

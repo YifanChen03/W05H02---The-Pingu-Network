@@ -9,6 +9,8 @@ public class User {
     private Post[] posts;
     private User[] friends;
 
+    private Picture profilePicture;
+
     public User(String name, String description) {
         this.name = name;
         this.description = description;
@@ -157,6 +159,10 @@ public class User {
     }
     public User[] getFriends() {
         return friends;
+    }
+
+    public Picture getProfilePicture() {
+        return profilePicture;
     }
 
     public void setName(String name) {

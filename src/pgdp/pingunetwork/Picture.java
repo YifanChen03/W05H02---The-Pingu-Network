@@ -16,7 +16,7 @@ public class Picture {
         this.location = location;
         this.data = data;
 
-        this.width = data.length;
+        this.width = data[data.length].length;
         this.height = data.length;
 
         thumbnails = new Picture[0];

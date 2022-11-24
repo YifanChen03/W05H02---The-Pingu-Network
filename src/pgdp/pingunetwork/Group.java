@@ -53,7 +53,10 @@ public class Group {
                 } else {
                     index = i;
                 }
-                nMembers[index] = members[i];
+                //hift bei github test, aber nicht gefordert
+                //if (index < nMembers.length && i < members.length) {
+                    nMembers[index] = members[i];
+                //}
             } else {
                 found = true;
                 //falls owner entfernt wird
@@ -63,6 +66,12 @@ public class Group {
             }
         }
         if (found) {
+            //falls Gruppe leer nach löschen
+            if (nMembers.length == 0 || nMembers == null) {
+                owner = null;
+                return;
+            }
+
             //erster aus members[] wird owner
             if (isOwner) {
                 owner = nMembers[0];
@@ -106,5 +115,9 @@ public class Group {
     }
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public static void main(String args) {
+
     }
 }

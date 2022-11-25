@@ -5,7 +5,7 @@ public class Group {
     private User owner;
     private String name;
     private String description;
-    private Picture picture; //picture nicht pictures singular
+    private Picture picture; //picture nicht array
     private User[] members;
 
     public Group(String name, String description, User owner, Picture picture) {

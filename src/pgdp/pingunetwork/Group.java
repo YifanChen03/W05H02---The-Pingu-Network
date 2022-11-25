@@ -41,15 +41,49 @@ public class Group {
      * @param user Ein beliebiges User-Objekt.
      */
     public void removeUser(User user) {
+        //falls User Array leer
+        if (members == null || members.length == 0) {
+            return;
+        }
         //falls user nicht enthalten ist
         boolean not_User = true;
         for (int i = 0; i < members.length; i++) {
+            //falls user doch enthalten
             if (members[i] == user) {
                 not_User = false;
             }
         }
         if (not_User) {
             return;
+        }
+
+        User[] nMembers = new User[members.length - 1];
+        boolean found = false;
+
+        for (int  i = 0; i < members.length; i++) {
+            if (members[i] != user) {
+                int index;
+                if(found) {
+                    index = i - 1;
+                } else {
+                    index = i;
+                }
+
+                nMembers[index] = members[i];
+            } else {
+                found = true;
+            }
+        }
+        if (found) {
+            members = nMembers;
+            //falls owner entfernt wird
+            if (user == owner) {
+                if (members.length > 0) {
+                    owner = members[0];
+                } else {
+                    owner = null;
+                }
+            }
         }
 
 

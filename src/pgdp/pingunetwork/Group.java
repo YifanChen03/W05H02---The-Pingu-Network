@@ -41,43 +41,18 @@ public class Group {
      * @param user Ein beliebiges User-Objekt.
      */
     public void removeUser(User user) {
-        User[] nMembers = new User[members.length - 1];
-        boolean found = false;
-        boolean isOwner = false;
-
-        for (int  i = 0; i < members.length; i++) {
-            if (members[i] != user) {
-                int index;
-                if(found) {
-                    index = i - 1;
-                } else {
-                    index = i;
-                }
-                //hift bei github test, aber nicht gefordert
-                //if (index < nMembers.length && i < members.length) {
-                    nMembers[index] = members[i];
-                //}
-            } else {
-                found = true;
-                //falls owner entfernt wird
-                if (members[i] == owner) {
-                    isOwner = true;
-                }
+        //falls user nicht enthalten ist
+        boolean not_User = true;
+        for (int i = 0; i < members.length; i++) {
+            if (members[i] == user) {
+                not_User = false;
             }
         }
-        if (found) {
-            //falls Gruppe leer nach löschen
-            if (nMembers.length == 0 || nMembers == null) {
-                owner = null;
-                return;
-            }
-
-            //erster aus members[] wird owner
-            if (isOwner) {
-                owner = nMembers[0];
-            }
-            members = nMembers;
+        if (not_User) {
+            return;
         }
+
+
     }
 
     /* ================ Getter und Setter ================ */

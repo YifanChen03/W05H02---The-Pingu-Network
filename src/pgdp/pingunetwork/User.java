@@ -113,7 +113,7 @@ public class User {
      * @param interactionType Ein beliebiger Integer.
      */
     public void interact(Post post, int interactionType) {
-        Interaction interaction = new Interaction(new User(name, description, profilePicture), interactionType);
+        Interaction interaction = new Interaction(this, interactionType);
         post.addInteraction(interaction);
     }
 

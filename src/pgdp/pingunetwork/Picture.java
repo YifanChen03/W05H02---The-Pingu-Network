@@ -17,12 +17,12 @@ public class Picture {
         this.data = data;
 
         if (data != null) {
-            if (data.length == 0 || data[0].length == 0) {
-                width = 0;
-                height = 0;
+            if (data.length == 0) {
+                this.width = 0;
+                this.height = data.length;
             } else {
-                width = data[0].length;
-                height = data.length;
+                this.width = data[0].length;
+                this.height = data.length;
             }
         }
 
